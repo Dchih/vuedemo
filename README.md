@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # vuejs
 
 > review
@@ -19,3 +20,8 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+=======
+# vuedemo
+## a mock vue project
+## by chih
+>>>>>>> 2c7853cc0a8c0d4b16d0a7734e0a447862d23e32
