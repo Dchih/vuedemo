@@ -1,6 +1,6 @@
-# vuejs-essential
+# vuejs
 
-> A Vue.js project
+> review
 
 ## Build Setup
 
