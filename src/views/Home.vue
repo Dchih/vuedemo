@@ -33,6 +33,18 @@ export default {
             }
         })
     },
+    computed: {
+        auth () {
+            return this.$store.state.auth
+        }
+    },
+    watch: {
+        auth (value) {
+            if(!value) {
+                this.showMessage(value ? '登录成功':'退出成功')
+            }
+        }
+    },
     methods: {
         showMessage (msg) {
             this.msg = msg,

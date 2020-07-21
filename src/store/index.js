@@ -27,6 +27,10 @@ const actions = {
         commit('SET_AUTH', true)
         router.push('/')
     },
+    logout({commit}, user) {
+        commit('SET_AUTH', false)
+        router.push('/login')
+    }
 }
 
 const store = new Vuex.Store({
