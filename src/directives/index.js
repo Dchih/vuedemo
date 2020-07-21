@@ -1,4 +1,4 @@
 import Vue from 'vue';
-import validate from  './validator';
+import validator from  './validator';
 
-Vue.directive('validate', validate);
+Vue.directive('validator', validator);

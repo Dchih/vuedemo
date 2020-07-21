@@ -94,13 +94,11 @@ export default {
     // 或者用 querySelector() + 属性选择器 选中form
     const form = el.closest('[data-validator-form]')
     const submitBtn = form ? form.querySelector('[type=submit]') : null
-
     if (submitBtn) {
       const submitHandler = () => {
         validate(el, modifiers, value)
 
         const errors = form.querySelectorAll('.has-error')
-
         if (!errors.length) {
           submitBtn.canSubmit = true
         } else {
