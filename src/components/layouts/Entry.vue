@@ -7,7 +7,7 @@
                 </a>
                 <ul class="dropdown-menu">
                 <li>
-                    <router-link to="/user/1/create">
+                    <router-link to="/articles/create">
                     <i class="fa fa-paint-brush text-md"></i>
                     创作文章
                     </router-link>

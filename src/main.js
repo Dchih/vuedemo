@@ -8,6 +8,7 @@ import './components'
 import store from './store'
 import VueSweetalert2 from './plugins/vue-sweetalert2'
 import Message from './plugins/message.js'
+import './filters'
 
 Vue.use(Message)
 Vue.use(VueSweetalert2)

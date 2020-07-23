@@ -45,8 +45,18 @@ export default [
       ]
     },
     {
-      path: '/user/1/create',
+      path: '/articles/create',
       name: 'Create',
+      component: () => import('@/views/articles/create.vue')
+    },
+    {
+      path: '/articles/:articleId/content',
+      name: 'Content',
+      component: () => import('@/views/articles/content.vue')
+    },
+    {
+      path: '/articles/:articleId/edit',
+      name: 'articleEdit',
       component: () => import('@/views/articles/create.vue')
     },
   ]

@@ -2,12 +2,26 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import ls from '../utils/localStorage.js'
 import router from '../router'
-
+import * as moreAction from './articles'
 Vue.use(Vuex)
 
 const state = {
     user: ls.getItem('user'),
-    auth: ls.getItem('auth')
+    auth: ls.getItem('auth'),
+    articles: ls.getItem('articles'),
+}
+
+const getters = {
+    getArticlesById: (state) => (id) => {
+        let articles = state.articles
+
+        if(Array.isArray(articles)) {
+            let article = articles.filter((item) => parseInt(item.articleId) === parseInt(id))
+            console.log('article.length', !article)
+            return article.length ? article[0] : null
+        }
+        return null
+    }
 }
 
 const mutations = {
@@ -18,6 +32,10 @@ const mutations = {
     SET_AUTH(state, auth) {
         state.auth = auth
         ls.setItem('auth', auth)
+    },
+    SET_ARTICLE(state, article) {
+        state.articles = article    // localStorage是存储地方 与 state 是一个状态
+        ls.setItem('articles', article)
     }
 }
 
@@ -40,11 +58,13 @@ const actions = {
         }
 
         commit('SET_USER', user)
-    }
+    },
+    ...moreAction
 }
 
 const store = new Vuex.Store({
     state,
+    getters,
     mutations,
     actions,
 })
