@@ -84,7 +84,7 @@ export default {
                 const user = {
                     name: this.name,
                     password: this.password,
-                    avatar: `https://api.adorable.io/avatars/200/${this.username}.png`
+                    avatar: `https://api.adorable.io/avatars/200/${this.name}.png`
                 }
                 // 从localStorage 获取 user 信息))))修改为从store获取
                 const localUser = this.$store.state.user;

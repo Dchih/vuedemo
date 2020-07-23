@@ -2,6 +2,19 @@
     <div class="navbar-right" style="margin-top: 10px;">
         <ul v-if="auth" class="nav navbar-nav github-login">
             <li>
+                <a v-dropdown href="javascript:;">
+                <i class="fa fa-plus text-md"></i>
+                </a>
+                <ul class="dropdown-menu">
+                <li>
+                    <router-link to="/user/1/create">
+                    <i class="fa fa-paint-brush text-md"></i>
+                    创作文章
+                    </router-link>
+                </li>
+                </ul>
+            </li>
+            <li>
                 <a v-dropdown href="#">
                     <span v-if="user">
                         <img v-if="user.avatar" :src="user.avatar" class="avatar-topnav">
@@ -11,6 +24,11 @@
                     <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
+                    <li>
+                        <router-link to="/users/1/edit">
+                            <i class="fa fa-cog text-md i-middle"></i>编辑资料
+                        </router-link>
+                    </li>
                     <li><a href="#" @click="logout"><i class="fa fa-sign-out text-md">退出</i></a></li>
                 </ul>
             </li>

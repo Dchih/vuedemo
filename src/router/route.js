@@ -19,4 +19,34 @@ export default [
       name: 'Login',
       component: () => import('@/views/auth/login.vue')
     },
+    {
+      path: '/users/1/edit',
+      // name: 'Edit',
+      component: () => import('@/views/users/edit.vue'),
+      children: [
+        {
+          path: '/user/1/edit',
+          name: 'EditProfile',
+          component: () => import('@/views/users/profile.vue'),
+          meta: {auth: true}
+        },
+        {
+          path: '/user/1/edit_avatar',
+          name: 'EditAvatar',
+          component: () => import('@/views/users/avatar.vue'),
+          meta: {auth: true}
+        },
+        {
+          path: '/user/1/edit_password',
+          name: 'EditPassword',
+          component: () => import('@/views/users/password.vue'),
+          meta:{auth: true}
+        },
+      ]
+    },
+    {
+      path: '/user/1/create',
+      name: 'Create',
+      component: () => import('@/views/articles/create.vue')
+    },
   ]

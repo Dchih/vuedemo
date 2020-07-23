@@ -8,15 +8,22 @@ Vue.use(Router)
 
 const router = new Router({
   mode: 'history',
+  linkExactActiveClass: 'active',
   routes,
 })
 
 // 全局前置守卫
 router.beforeEach((to, from, next) => {
-  console.log('路由====', router)
-  const auth = router.app.$options.store.state.auth
+  const app = router.app
+  const store = app.$options.store
+  const auth = store.state.auth
 
-  if (auth && to.path.indexOf('/auth/') !== -1) {
+  // const auth = router.app.$options.store.state.auth
+
+  app.$message.hide()
+
+  if ((auth && to.path.indexOf('/auth/') !== -1)
+  || (!auth && to.meta.auth)) {
     next('/')
   } else {
     next()

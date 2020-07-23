@@ -30,6 +30,16 @@ const actions = {
     logout({commit}, user) {
         commit('SET_AUTH', false)
         router.push('/login')
+    },
+    updateUser({commit}, user) {
+        console.log('updateUser111')
+        const stateUser = state.user
+
+        if(stateUser && typeof stateUser === 'object') {
+            user = {...stateUser, ...user}
+        }
+
+        commit('SET_USER', user)
     }
 }
 
